@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Clase 15 - Kanaszyc</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <figure class="text-center">
+                        <blockquote class="blockquote">
+                            <p class="aviso">Reservas de mesas para Restorante</p>
+                        </blockquote>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <figure class="text-center" id="sinMesas">
+                        <blockquote class="blockquote">
+                            <p class="aviso">No hay reservas disponibles por el momento. Vuelva más tarde!</p>
+                        </blockquote>
+                    </figure>
+                    <section class="display" id="conMesas">
+                        <table id="table" class="table">
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="botonesCentrados">
+                        <button id="btnReservar" class="btn btn-outline-primary" type="button">Reservar seleccionado</button>
+                        <button id="btnEliminar" class="btn btn-outline-primary" type="button">Eliminar Reserva hecha</button>
+                        <button id="btnBuscar" class="btn btn-outline-primary" type="button">Buscar reserva hecha</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divReservar" class="container-fluid display">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <section>
+                        <form action="">
+                            <label class="bloque" for="dni">Ingrese su DNI<input id="inputDniR" class="bloque" name="dni" type="number" placeholder="Ingrese su DNI" required maxlength="8"></label>
+                            <label class="bloque" for="nombre">Ingrese su nombre<input id="inputNombreR" class="bloque" name="nombre" type="text" placeholder="Ingrese su nombre" required></label>
+                            <label class="bloque" for="apellido">Ingrese su apellido<input id="inputApellidoR" class="bloque" name="apellido" type="text" placeholder="Ingrese apellido" required></label>
+                            <button id="btnConfirmarR" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Confirmar</button>
+                            <button id="btnCancelarR" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Cancelar</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div id="divEliminar" class="container-fluid display">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <section>
+                        <form action="">
+                            <label class="bloque" for="dni">Ingrese su DNI<input id="inputDniE" class="bloque" name="dni" type="number" placeholder="Ingrese su DNI" required></label>
+                            <button id="btnConfirmarE" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Confirmar</button>
+                            <button id="btnCancelarE" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Cancelar</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div id="divBuscar" class="container-fluid display">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <section>
+                        <form action="">
+                            <label class="bloque" for="dni">Ingrese su DNI<input id="inputDniB" class="bloque" name="dni" type="number" placeholder="Ingrese su DNI" required></label>
+                            <button id="btnConfirmarB" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Confirmar</button>
+                            <button id="btnCancelarB" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Cancelar</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div id="divEliminarE" class="container-fluid display">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <table class="table" id="tablaSecundaria">
+                    </table>
+                    <button id="btnConfirmarEID" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Confirmar</button>
+                    <button id="btnCancelarEID" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <div id="divBuscarB" class="container-fluid display">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <table class="table" id="tablaTerciaria">
+                    </table>
+                    <button id="btnConfirmarBID" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Confirmar</button>
+                    <button id="btnCancelarBID" class="btn btn-outline-primary botonesConfirmarCancelar" type="button">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="copyright">
+                        <label>&#169;Copyright <a href="https://github.com/PatoK93" target="_blank">Patricio Agustín Kanaszyc</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

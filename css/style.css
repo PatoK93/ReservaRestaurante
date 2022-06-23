@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+}
+
+p {
+    color: red;
+}
+
+tr {
+    color: red;
+    font-size: x-large;
+}
+
+label {
+    color: red;
+    font-size: x-large;
+}
+
+table {
+    text-align: center;
+}
+
+.botonesCentrados,
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.aviso {
+    font-size: xx-large;
+}
+
+.display {
+    display: none;
+}
+
+.bloque {
+    display: block;
+}
